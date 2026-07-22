@@ -176,7 +176,7 @@ config:
 # **WARNING:** Never commit real credentials to git. Use external secrets
 # management (External Secrets Operator, Sealed Secrets, Vault).
 broker:
-  # -- Broker type (`rabbitmq` or `googlepubsub`).
+  # -- Broker type (`rabbitmq`, `googlepubsub`, or `nats`).
   # See the [broker library](https://github.com/openshift-hyperfleet/hyperfleet-broker).
   type: rabbitmq
 
@@ -201,6 +201,15 @@ broker:
     numGoroutines: 10
     # -- Auto-create topic if it does not exist (use `false` in production)
     createTopicIfMissing: false
+
+  # -- NATS JetStream configuration
+  nats:
+    # -- NATS server URL
+    url: nats://nats.hyperfleet.svc.cluster.local:4222
+    # -- Auto-create the JetStream stream if it does not exist (use `false` in production)
+    createStreamIfMissing: false
+    # -- Stream storage backend (`file` or `memory`)
+    storage: file
 
 # -- Monitoring and metrics configuration
 monitoring:

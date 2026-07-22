@@ -375,7 +375,8 @@
           "description": "Broker type",
           "enum": [
             "rabbitmq",
-            "googlepubsub"
+            "googlepubsub",
+            "nats"
           ]
         },
         "topic": {
@@ -433,6 +434,28 @@
             "createTopicIfMissing": {
               "type": "boolean",
               "description": "Automatically create topic if it does not exist"
+            }
+          }
+        },
+        "nats": {
+          "type": "object",
+          "description": "NATS JetStream configuration",
+          "properties": {
+            "url": {
+              "type": "string",
+              "description": "NATS server URL (nats://host:port)"
+            },
+            "createStreamIfMissing": {
+              "type": "boolean",
+              "description": "Auto-create the JetStream stream if missing"
+            },
+            "storage": {
+              "type": "string",
+              "description": "Stream storage backend",
+              "enum": [
+                "file",
+                "memory"
+              ]
             }
           }
         }

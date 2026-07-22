@@ -96,6 +96,11 @@ data:
         {{- if hasKey .Values.broker.googlepubsub "createTopicIfMissing" }}
         create_topic_if_missing: {{ .Values.broker.googlepubsub.createTopicIfMissing }}
         {{- end }}
+      {{- else if eq .Values.broker.type "nats" }}
+      nats:
+        url: {{ .Values.broker.nats.url | quote }}
+        create_stream_if_missing: {{ .Values.broker.nats.createStreamIfMissing | default false }}
+        storage: {{ .Values.broker.nats.storage | default "file" | quote }}
       {{- end }}
 
     {{- if .Values.subscriber }}

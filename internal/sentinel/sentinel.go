@@ -24,6 +24,7 @@ import (
 // otelMessagingSystem maps broker type identifiers to OTel semantic convention values
 var otelMessagingSystem = map[string]string{
 	"googlepubsub": "gcp_pubsub",
+	"nats":         "nats",
 }
 
 func brokerTypeToOTel(brokerType string) string {
