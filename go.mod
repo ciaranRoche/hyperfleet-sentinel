@@ -146,4 +146,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1
 )
 
-replace github.com/openshift-hyperfleet/hyperfleet-broker => github.com/ciaranRoche/hyperfleet-broker v0.0.0-20260722104229-5e90ee9db069
+replace github.com/openshift-hyperfleet/hyperfleet-broker => github.com/ciaranRoche/hyperfleet-broker v0.0.0-20260722105756-911d23381785
