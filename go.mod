@@ -26,12 +26,26 @@ require (
 require (
 	cel.dev/expr v0.25.2 // indirect
 	github.com/antlr4-go/antlr/v4 v4.13.1 // indirect
+	github.com/jackc/pgpassfile v1.0.0 // indirect
+	github.com/jackc/pgservicefile v0.0.0-20240606120523-5a60cdf6a761 // indirect
+	github.com/jackc/pgx/v5 v5.10.0 // indirect
+	github.com/jackc/puddle/v2 v2.2.2 // indirect
 	github.com/moby/moby/api v1.55.0 // indirect
 	github.com/moby/moby/client v0.5.0 // indirect
+	github.com/riverqueue/river v0.41.1 // indirect
+	github.com/riverqueue/river/riverdriver v0.41.1 // indirect
+	github.com/riverqueue/river/riverdriver/riverpgxv5 v0.41.1 // indirect
+	github.com/riverqueue/river/rivershared v0.41.1 // indirect
+	github.com/riverqueue/river/rivertype v0.41.1 // indirect
+	github.com/tidwall/gjson v1.19.0 // indirect
+	github.com/tidwall/match v1.2.0 // indirect
+	github.com/tidwall/pretty v1.2.1 // indirect
+	github.com/tidwall/sjson v1.2.5 // indirect
 	go.opentelemetry.io/contrib/propagators/aws v1.44.0 // indirect
 	go.opentelemetry.io/contrib/propagators/b3 v1.44.0 // indirect
 	go.opentelemetry.io/contrib/propagators/jaeger v1.44.0 // indirect
 	go.opentelemetry.io/contrib/propagators/ot v1.44.0 // indirect
+	go.uber.org/goleak v1.3.0 // indirect
 	golang.org/x/exp v0.0.0-20240823005443-9b4947da3948 // indirect
 )
 
@@ -141,3 +155,5 @@ require (
 	google.golang.org/protobuf v1.36.11 // indirect
 	gopkg.in/yaml.v3 v3.0.1
 )
+
+replace github.com/openshift-hyperfleet/hyperfleet-broker => github.com/ciaranRoche/hyperfleet-broker v0.0.0-20260730070917-2efa7deb2e47

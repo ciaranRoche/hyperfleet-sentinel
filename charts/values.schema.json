@@ -372,8 +372,27 @@
           "description": "Broker type",
           "enum": [
             "rabbitmq",
-            "googlepubsub"
+            "googlepubsub",
+            "river"
           ]
+        },
+        "river": {
+          "type": "object",
+          "description": "River (Postgres) broker configuration",
+          "properties": {
+            "dsn": {
+              "type": "string",
+              "description": "Postgres connection string in URI form"
+            },
+            "createSchemaIfMissing": {
+              "type": "boolean",
+              "description": "Run River migrations and create the subscription registry at startup"
+            },
+            "fetchCooldown": {
+              "type": "string",
+              "description": "Minimum time between job fetches (duration string)"
+            }
+          }
         },
         "topic": {
           "type": "string",

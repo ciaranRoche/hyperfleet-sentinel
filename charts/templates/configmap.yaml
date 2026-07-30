@@ -101,6 +101,15 @@ data:
         {{- if hasKey .Values.broker.googlepubsub "createTopicIfMissing" }}
         create_topic_if_missing: {{ .Values.broker.googlepubsub.createTopicIfMissing }}
         {{- end }}
+      {{- else if eq .Values.broker.type "river" }}
+      river:
+        dsn: {{ .Values.broker.river.dsn | quote }}
+        {{- if hasKey .Values.broker.river "createSchemaIfMissing" }}
+        create_schema_if_missing: {{ .Values.broker.river.createSchemaIfMissing }}
+        {{- end }}
+        {{- if .Values.broker.river.fetchCooldown }}
+        fetch_cooldown: {{ .Values.broker.river.fetchCooldown }}
+        {{- end }}
       {{- end }}
 
     {{- if .Values.subscriber }}

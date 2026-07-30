@@ -219,6 +219,13 @@ broker:
     # -- Auto-create topic if it does not exist (use `false` in production)
     createTopicIfMissing: false
 
+  # -- River (Postgres) configuration
+  river:
+    # -- Postgres connection string in URI form (`postgres://user:password@host:port/db`)
+    dsn: postgres://<USER>:<PASSWORD>@postgres.hyperfleet-system.svc.cluster.local:5432/broker
+    # -- Run River migrations and create the subscription registry at startup (use `false` in production)
+    createSchemaIfMissing: false
+
 # -- Monitoring and metrics configuration
 monitoring:
   # -- PodMonitoring for Google Cloud Managed Prometheus (GMP)
